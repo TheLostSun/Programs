@@ -25,7 +25,6 @@ class ArrayExceptionHandling
                 System.out.println("Enter the index of the array element you want to access");
                 int k=sc.nextInt();
                 System.out.println("The array element at "+k+"="+arr[k]);
-                System.out.println("The array element has been successfully accessed");
             }
            
             catch(ArrayIndexOutOfBoundsException obj2)
@@ -33,6 +32,11 @@ class ArrayExceptionHandling
                 System.out.println("Index is out of range of the array/ArrayOutOfBoundsException has occured ");
                 System.exit(0);
             } 
+
+            finally
+            {
+                System.out.println("The array element has been successfully accessed");
+            }
         
       
     }
