@@ -32,6 +32,11 @@ class ArrayExceptionHandling
                 System.out.println("Index is out of range of the array/ArrayOutOfBoundsException has occured ");
                 System.exit(0);
             } 
+            catch(NumberFormatException obj)
+            {
+                System.out.println("Number format exception is thrown");
+                System.exit(0);
+            }
 
             finally
             {
