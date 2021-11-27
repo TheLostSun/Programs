@@ -69,7 +69,7 @@
             // call run() method  
             t1.start();  
             t2.start();  
-            Thread.sleep(100);  
+            Thread.sleep(10000);  
             t3.start();  
         }  
     }  

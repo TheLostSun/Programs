@@ -1,38 +1,34 @@
-class Thread1 extends Thread{
-        public void run()
-        {
-            for(int i=0;i<6;i++)
-            {
-                if(i==3)
-                {
-                    System.out.println("Thread 1 is running");
-                
-            }
-        }
-}
-class Thread2 extends Thread{
+class ThreadDemo1 extends Thread
+{
     public void run()
     {
-        for(int i=0;i<3;i++)
-        {
-            System.out.println("Thread 2 is running");
-        }
+        System.out.println("DemoThread1 is Executing.");
     }
 }
-class ThreadExample2
+class ThreadDemo2 extends Thread
 {
-    public static void main(String args[])
+    public void run()
     {
-        Thread1 obj1=new Thread1();
-        Thread2 obj2=new Thread2();
-        obj1.start();
-        obj2.start();
-        for(int i=0;i<6;i++)
-        {
-            if(i%2==0)
-            {
-                obj1.yield();
-            }
-        }
+        System.out.println("DemoThread2 is Executing.");
     }
+}
+class ThreadDemo3 extends Thread
+{
+    public void run()
+    {
+        System.out.println("DemoThread3 is Executing.");
+    }
+}
+class ThreadHandler
+{
+    ThreadDemo1 t1=new ThreadDemo1();
+    ThreadDemo2 t2=new ThreadDemo2();
+    ThreadDemo3 t3=new ThreadDemo3();
+    System.out.println("Currently executing Thread = "+Thread.currentThread().getName());
+    t1.setPriority(6);
+    t2.setPriority(7);
+    t3.setPriority(8);
+    t1.start();
+    t2.start();
+    t3.start();
 }
